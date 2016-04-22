@@ -11,7 +11,8 @@ Supported options
 count = number of news item to display  
 option = r = display in reverse order. Reverse display does not change the news id.
 
-Needs gradle to build. Run 
+Needs gradle to build. Run   
+  
 ./build.sh  
 
 to build and copy the jar to project root directory.
