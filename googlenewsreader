@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar google-news-reader.jar $1 $2

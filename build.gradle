@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'googlenews.GoogleTechNews'
+
+repositories {
+	mavenCentral();
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile "org.jsoup:jsoup:1.9.1"
+}
+
+jar {
+	baseName = 'gtechnewsreader'
+	version = '0.1.0'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.3'
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+		attributes 'Implementation-Title': 'Google Tech News Reader',
+				'Implementation-Version': '1.0',
+				'Main-Class': 'googlenews.GoogleTechNews'
+	}
+	baseName = project.name + '-all'
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
+}
