@@ -8,6 +8,7 @@ chmod +x googlenewsreader
 Supported options
 ./googlenewsreader count option
 
-count = number of news item to display
+count = number of news item to display   
+
 option = r = display in reverse order. Reverse display does not change the news id.
 
